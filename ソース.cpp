@@ -1,35 +1,34 @@
-//@“Œvver2
-/* ver1‚Æ‚Ìˆá‚¢‚Í—v‘f”‚Æƒf[ƒ^‚ğ—”‚ğ—p‚¢‚Ä¶¬‚·‚é‚±‚Æ‚ÆA”z—ñ‚ğ—v‘f”•ª‚Ìƒƒ‚ƒŠ‚ğ“®“I‚ÉŠm•Û‚·‚é‚±‚ÆB*/
+//ã€€çµ±è¨ˆver2
 
 #include<stdio.h>
 #include<stdlib.h>
 #include<time.h>
 #include<math.h>
 
-void hyouji(double* p_array, int n, double heikinn);	//•\¦‚ğs‚¢‚Ü‚·
-void deviation(double* p_array, int n);					//•½‹ÏA•ªUA•W€•Î·‚ğZo‚µ‚Ü‚·
-void seiretu(double* p_array, int n);					//¸‡‚É•À‚×‘Ö‚¦AÅ¬’lAÅ‘å’lA’†‰›’l‚ğZo‚µ‚Ü‚·
-void mode(double* p_array, int n);						//Å•p’l‚ğZo‚µ‚Ü‚·
-void histgram(double* p_array, int n);					//ƒqƒXƒgƒOƒ‰ƒ€‚ğ•\¦
+void hyouji(double* p_array, int n, double heikinn);			//è¡¨ç¤º
+void deviation(double* p_array, int n);					//å¹³å‡ã€åˆ†æ•£ã€æ¨™æº–åå·®ã‚’ç®—å‡º
+void seiretu(double* p_array, int n);					//æ˜‡é †ã«ä¸¦ã¹æ›¿ãˆã€æœ€å°å€¤ã€æœ€å¤§å€¤ã€ä¸­å¤®å€¤ã‚’ç®—å‡º
+void mode(double* p_array, int n);						//æœ€é »å€¤ã‚’ç®—å‡º
+void histgram(double* p_array, int n);					//ãƒ’ã‚¹ãƒˆã‚°ãƒ©ãƒ ã‚’è¡¨ç¤º
 
 int main() {
 	int n;
 
-	//Œ»İ‚Ì‚ğí‚É—”‚ğ¶¬
+	//ç¾åœ¨ã®æ™‚åˆ»ã‚’ç¨®ã«ä¹±æ•°ã‚’ç”Ÿæˆ
 	srand((unsigned int)time(NULL));
 
-	// 1`50ŒÂ‚Ì—”‚Å—v‘f”n‚ğ¶¬
-	printf("1`50ŒÂ‚Ì—”‚Å—v‘f”‚ğ¶¬‚µ‚Ü‚·\n");
+	// 1ï½50å€‹ã®ä¹±æ•°ã§è¦ç´ æ•°nã‚’ç”Ÿæˆ
+	printf("1ï½50å€‹ã®ä¹±æ•°ã§è¦ç´ æ•°ã‚’ç”Ÿæˆã—ã¾ã™\n");
 	n = 1 + rand() % 50;
-	printf("—v‘f”‚Í%d‚Å‚·\n", n);
+	printf("è¦ç´ æ•°ã¯%dã§ã™\n", n);
 
-	// nŒÂ•ª‚Ìƒƒ‚ƒŠ‚ğ“®“IŠm•Û
+	// nå€‹åˆ†ã®ãƒ¡ãƒ¢ãƒªã‚’å‹•çš„ç¢ºä¿
 	double* p_array = (double*)malloc(n * sizeof(double));
 	if (p_array == NULL)
-		printf("ƒƒ‚ƒŠ‚ğŠm•Û‚Å‚«‚Ü‚¹‚ñ‚Å‚µ‚½\n");
+		printf("ãƒ¡ãƒ¢ãƒªã‚’ç¢ºä¿ã§ãã¾ã›ã‚“ã§ã—ãŸ\n");
 
-	//”š‚Ì“ü—Í
-	printf("%dŒÂ‚Ì”š‚ğ1`100‚Ì—”‚Å¶¬‚µ‚Ü‚·\n", n);
+	//æ•°å­—ã®å…¥åŠ›
+	printf("%då€‹ã®æ•°å­—ã‚’1ï½100ã®ä¹±æ•°ã§ç”Ÿæˆã—ã¾ã™\n", n);
 	for (int i = 0; i < n; i++) {
 		p_array[i] = 1 + rand() % 100;
 	}
@@ -45,11 +44,11 @@ int main() {
 }
 
 
-//•\¦‚Í­‚µ‚±‚¾‚í‚è‚Ü‚µ‚½
+//è¡¨ç¤ºã¯å°‘ã—ã“ã ã‚ã‚Šã¾ã—ãŸ
 void hyouji(double *p_array, int n, double heikinn) {
-	//•\¦
+	//è¡¨ç¤º
 	printf("\n\n\n");
-	printf("—v‘f |    ƒf[ƒ^   |  •½‹Ï’l‚©‚ç‚Ì·  | (•½‹Ï’l‚©‚ç‚Ì·)^2\n");
+	printf("è¦ç´  |    ãƒ‡ãƒ¼ã‚¿   |  å¹³å‡å€¤ã‹ã‚‰ã®å·®  | (å¹³å‡å€¤ã‹ã‚‰ã®å·®)^2\n");
 	printf("--------------------------------------------------------\n");
 	for (int i = 0; i < n; i++) {
 		printf("%4d | %10.2f  |    %10.2f    |  %10.2f", i + 1, p_array[i], (heikinn - p_array[i]), (heikinn - p_array[i]) * (heikinn - p_array[i]));
@@ -63,13 +62,13 @@ void deviation(double* p_array, int n) {
 	double sum = 0;
 	double sum_t = 0;
 
-	//•½‹Ï‚ÌYo
+	//å¹³å‡ã®ç”£å‡º
 	for (int i = 0; i < n; i++) {
 		sum += p_array[i];
 	}
 	double heikinn = sum / n;
 
-	//•ªU‚ÌZo
+	//åˆ†æ•£ã®ç®—å‡º
 	for (int i = 0; i < n; i++) {
 		sum_t += (heikinn - p_array[i]) * (heikinn - p_array[i]);
 	}
@@ -77,15 +76,15 @@ void deviation(double* p_array, int n) {
 
 	hyouji(p_array, n, heikinn);
 
-	printf("•½‹Ï  %.2f\n", heikinn);
-	printf("•ªU  %.2f\n", bunnsann);
-	printf("•W€•Î·  %.2f\n\n", sqrt(bunnsann));		//sqrt(bunnsann)‚Å•ªU‚Ì•½•ûªi•W€•Î·j‚ğZo
+	printf("å¹³å‡ ï¼ %.2f\n", heikinn);
+	printf("åˆ†æ•£ ï¼ %.2f\n", bunnsann);
+	printf("æ¨™æº–åå·® ï¼ %.2f\n\n", sqrt(bunnsann));		//sqrt(bunnsann)ã§åˆ†æ•£ã®å¹³æ–¹æ ¹ï¼ˆæ¨™æº–åå·®ï¼‰ã‚’ç®—å‡º
 }
 
 
 void seiretu(double* p_array, int n) {
-	//ƒoƒuƒ‹ƒ\[ƒg
-	printf("¸‡‚Éƒ\[ƒg\n");
+	//ãƒãƒ–ãƒ«ã‚½ãƒ¼ãƒˆ
+	printf("æ˜‡é †ã«ã‚½ãƒ¼ãƒˆ\n");
 	for (int i = 0; i < n - 1; i++) {
 		for (int j = i + 1; j < n; j++) {
 			if (p_array[i] > p_array[j]) {
@@ -96,22 +95,22 @@ void seiretu(double* p_array, int n) {
 		}
 	}
 
-	//ƒ\[ƒgŒã•\¦
+	//ã‚½ãƒ¼ãƒˆå¾Œè¡¨ç¤º
 	for (int i = 0; i < n; i++) {
 		printf("%.2f   ", p_array[i]);
 	}
 	printf("\n\n");
 
-	printf("Å¬’l  %.2f\n", p_array[0]);
-	printf("Å‘å’l  %.2f\n", p_array[n - 1]);
+	printf("æœ€å°å€¤ ï¼ %.2f\n", p_array[0]);
+	printf("æœ€å¤§å€¤ ï¼ %.2f\n", p_array[n - 1]);
 
-	//—v‘f”‚ªŠï”‚È‚ç•’Ê‚É’†‰›’l‚ğZo
+	//è¦ç´ æ•°ãŒå¥‡æ•°ãªã‚‰æ™®é€šã«ä¸­å¤®å€¤ã‚’ç®—å‡º
 	if ((n % 2) == 1) {
-		printf("’†‰›’l  %.2f\n", p_array[n / 2]);
+		printf("ä¸­å¤®å€¤ ï¼ %.2f\n", p_array[n / 2]);
 	}
-	//—v‘f”‚ª‹ô”‚È‚ç’†‰›’l‚É“–‚½‚é“ñ‚Â‚Ì”š‚Ì•½‹Ï‚ğ‚Æ‚é
+	//è¦ç´ æ•°ãŒå¶æ•°ãªã‚‰ä¸­å¤®å€¤ã«å½“ãŸã‚‹äºŒã¤ã®æ•°å­—ã®å¹³å‡ã‚’ã¨ã‚‹
 	else {
-		printf("’†‰›’l  %.2f\n", (p_array[n / 2] + p_array[n / 2 - 1]) / 2);
+		printf("ä¸­å¤®å€¤ ï¼ %.2f\n", (p_array[n / 2] + p_array[n / 2 - 1]) / 2);
 	}
 }
 
@@ -119,12 +118,12 @@ void seiretu(double* p_array, int n) {
 void mode(double* p_array, int n) {
 	int count[100];
 
-	//oŒ»‰ñ”‚ğ0‚Å‰Šú‰»
+	//å‡ºç¾å›æ•°ã‚’0ã§åˆæœŸåŒ–
 	for (int i = 0; i < n; i++) {
 		count[i] = 0;
 	}
 
-	//”š‚ÌoŒ»‰ñ”‚ğƒJƒEƒ“ƒg
+	//æ•°å­—ã®å‡ºç¾å›æ•°ã‚’ã‚«ã‚¦ãƒ³ãƒˆ
 	for (int i = 0; i < n - 1; i++) {
 		for (int j = i + 1; j < n; j++) {
 			if (p_array[i] == p_array[j]) {
@@ -133,7 +132,7 @@ void mode(double* p_array, int n) {
 		}
 	}
 
-	//oŒ»‰ñ”‚ğ‚à‚Æ‚ÉÅ•p’l‚Ì“Y‚¦š‚ğZo
+	//å‡ºç¾å›æ•°ã‚’ã‚‚ã¨ã«æœ€é »å€¤ã®æ·»ãˆå­—ã‚’ç®—å‡º
 	int mode_num;
 	int max_mode = 0;
 	for (int i = 0; i < n; i++) {
@@ -143,7 +142,7 @@ void mode(double* p_array, int n) {
 		}
 	}
 
-	printf("Å•p’l  %.2f\n\n", p_array[mode_num]);
+	printf("æœ€é »å€¤ ï¼ %.2f\n\n", p_array[mode_num]);
 }
 
 
@@ -177,24 +176,24 @@ void histgram(double* p_array, int n) {
 		}
 	}
 
-	printf("ƒqƒXƒgƒOƒ‰ƒ€‚ğ•\¦\n");
+	printf("ãƒ’ã‚¹ãƒˆã‚°ãƒ©ãƒ ã‚’è¡¨ç¤º\n");
 	for (int i = 0; i < 10; i++) {
 		printf("%2d - %3d :", 10 * i + 1, 10 * (i + 1));
 		for (int j = 0; j < x[i]; j++) {
-			printf(" ");
+			printf("â–¡");
 		}
 		printf("\n");
 	}
 }
 
-/*ƒƒ‚
-switch•ª‚Ì®‚ÍdoubleŒ^‚Íg‚¦‚È‚¢ ¨ doubleŒ^‚ÍM—Š«‚ª’á‚¢‚©‚ç‚¾‚»‚¤
-switch(p_array[i] / 10)@‚¾‚ÆA‚¤‚Ü‚­‚¢‚©‚È‚¢
-«
+/*ãƒ¡ãƒ¢
+switchåˆ†ã®å¼ã¯doubleå‹ã¯ä½¿ãˆãªã„ â†’ doubleå‹ã¯ä¿¡é ¼æ€§ãŒä½ã„ã‹ã‚‰ã ãã†
+ä¾‹ã€€switch(p_array[i] / 10)ã€€  ãƒ»ãƒ»ãƒ»(p_array ã¯double*å‹)ã ã¨ã€ã†ã¾ãã„ã‹ãªã„
+â†“
 int v = p_array[i] / 10;
 switch(v)	
-‚Ì‚æ‚¤‚Éswitch‚Ì’†‚Å•]‰¿‚µ‚È‚¢‚ÅA•Ï”‚Å’l‚ğo‚µ‚Ä‚©‚çswitch‚Å•]‰¿
+ã®ã‚ˆã†ã«switchã®ä¸­ã§è©•ä¾¡ã—ãªã„ã§ã€å¤‰æ•°ã§å€¤ã‚’å‡ºã—ã¦(intå‹ã«å¤‰æ›)ã‹ã‚‰switchã§è©•ä¾¡
 
 
-p_array[i] ‚Æ *(p_array + i)‚Í“¯‚¶
+p_array[i] ã¨ *(p_array + i)ã¯åŒã˜
 */
